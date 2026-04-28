@@ -1,0 +1,177 @@
+/* --- 기본 설정: 16px 기준 --- */
+:root {
+    font-size: 16px; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E2E8F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, sans-serif; 
+}
+
+/* 피그마 1440x1024 */
+.canvas {
+    width: 90rem;   /* 1440px */
+    height: 64rem;  /* 1024px */
+    background-color: #F6F6F6;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+/* --- 휴대폰 영역 배치 --- */
+.phone-section {
+    position: absolute;
+    top: 9.25rem;    /* 148px 지점 (피그마 좌표 반영) */
+    left: 13.5rem;   /* 216px 지점 */
+}
+
+.phone-wrapper {
+    position: relative;
+    width: 32.5rem;
+    height: 48.75rem;
+}
+
+.phone-container {
+    position: absolute;
+    width: 22.6875rem; /* 363px */
+    height: 45.5rem;   /* 728px */
+}
+
+/* 위치 정밀 고정 */
+.phone-notch {
+    position: absolute;
+    top: 0.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8.875rem; 
+    height: auto;
+    z-index: 30;
+}
+
+.phone-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.screen-content {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: calc(100% - 1.5rem);
+    height: calc(100% - 1.5rem);
+    border-radius: 2.5rem;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.screen-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back-phone { z-index: 1; left: 0; top: 0; }
+.front-phone { left: 9.8rem; top: 4.3rem; z-index: 5; }
+
+/* --- 로그인 영역 배치 --- */
+.login-section {
+    position: absolute;
+    top: 9.25rem;    /* 휴대폰과 높이 일치 (148px) */
+    left: 50.5rem;   /* 808px 지점 */
+    width: 26rem;    /* 416px */
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.white-box {
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    text-align: center;
+}
+
+.login-main { padding: 3rem 2.5rem 1.5rem; }
+
+.main-logo img {
+    width: 11rem;
+    margin-bottom: 2.5rem;
+}
+
+/* 입력 필드 보정 */
+.input-field {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.field-icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem; 
+    opacity: 0.4;
+}
+
+.input-field input {
+    width: 100%;
+    height: 2.5rem;
+    background-color: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    border-radius: 1.875rem;
+    padding-left: 2.8rem; /* 간격 최적화 */
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+/* 버튼 및 기타 */
+.btn-login {
+    background-color: #B2DDFF;
+    color: white;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    border-radius: 1.875rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+.or-divider .line { flex: 1; height: 1px; background-color: #DBDBDB; }
+.or-divider .text { padding: 0 1rem; color: #8E8E8E; font-size: 0.8rem; font-weight: 600; }
+
+.btn-kakao {
+    background-color: #FEE500;
+    height: 2.8rem;
+    border-radius: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-kakao img { width: 1.25rem; }
+
+.forgot-link { color: #00376B; font-size: 0.75rem; margin-top: 1.5rem; cursor: pointer; }
+
+.signup-link { padding: 1.5rem; font-size: 0.9rem; }
+.blue-bold { color: #0095F6; font-weight: 600; cursor: pointer; }
+
+.download-info { text-align: center; margin-top: 1.5rem; }
+.store-btns { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
+.store-btns img { height: 2.5rem; cursor: pointer; }
