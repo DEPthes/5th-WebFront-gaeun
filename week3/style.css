@@ -1,0 +1,101 @@
+/* --- 1. 색상 요소화 --- */
+:root {
+    --bg-color: #f8f9fa;           
+    --calc-bg: #ffffff;         
+    --pink-main: #ffcfd2;       
+    --pink-dark: #f1a7ab;       
+    --gray-text: #4a4a4a;        
+    --white-text: #ffffff;       
+    --shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
+}
+/* --- 2. 기본 스타일 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Inter', -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- 3. 계산기 레이아웃 --- */
+.calculator {
+    background-color: var(--calc-bg);
+    width: 320px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+/* 결과창 */
+.display {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff5f5; 
+    border-radius: 20px;
+}
+
+.result {
+    font-size: 3rem;
+    color: var(--gray-text);
+    font-weight: 300;
+}
+
+/* --- 4. 그리드 버튼 배치 --- */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 12px;
+}
+
+/* 공통 버튼 스타일 */
+.btn {
+    height: 60px;
+    border: none;
+    border-radius: 50%; 
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    color: var(--gray-text);
+    transition: all 0.2s; 
+}
+
+.btn:hover {
+    background-color: #ebebeb;
+}
+
+.btn:active {
+    transform: scale(0.95); 
+}
+
+/* 연산자 버튼 */
+.btn-operator {
+    background-color: var(--pink-main);
+    color: var(--white-text);
+}
+
+.btn-operator:hover {
+    background-color: var(--pink-dark);
+}
+
+/* 기능 버튼 */
+.btn-func {
+    background-color: #e9ecef;
+}
+
+/* 0 버튼 (두 칸 차지하기) */
+.btn-zero {
+    grid-column: span 2;
+    border-radius: 30px; 
+}
