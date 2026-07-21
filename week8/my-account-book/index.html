@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8주차 가계부</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>가계부</h1>
+
+      <section class="dashboard">
+        <div class="card income">
+          <h3>총 수입</h3>
+          <p id="total-income">0원</p>
+        </div>
+        <div class="card expense">
+          <h3>총 지출</h3>
+          <p id="total-expense">0원</p>
+        </div>
+        <div class="card balance">
+          <h3>현재 잔액</h3>
+          <p id="total-balance">0원</p>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <form id="ledger-form">
+          <div class="input-group">
+            <label for="type">분류</label>
+            <select id="type" required>
+              <option value="income">수입</option>
+              <option value="expense">지출</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="description">내역</label>
+            <input type="text" id="description" placeholder="예: 용돈" required />
+          </div>
+          <div class="input-group">
+            <label for="amount">금액</label>
+            <input type="number" id="amount" placeholder="금액을 입력하세요" required />
+          </div>
+          <button type="submit">등록하기</button>
+        </form>
+      </section>
+
+      <div id="error-message" class="error-box" style="display: none;"></div>
+
+      <section class="history-section">
+        <h2>거래 내역 조회</h2>
+        <ul id="transaction-list">
+        </ul>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
